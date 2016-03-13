@@ -1,8 +1,13 @@
 var React = require('react');
 
+var Header = require('../components/Header');
+
 var MainContainer = function (props) {
   return (
-    props.children
+    <div>
+      <Header />
+      {props.children}
+    </div>
   )
 }
 
