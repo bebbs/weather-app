@@ -1,12 +1,9 @@
 var React = require('react');
-var HelloWorld = require('../components/HelloWorld');
 
-var MainContainer = React.createClass({
-  render: function() {
-    return (
-      <HelloWorld />
-    );
-  }
-});
+var MainContainer = function (props) {
+  return (
+    props.children
+  )
+}
 
 module.exports = MainContainer;
