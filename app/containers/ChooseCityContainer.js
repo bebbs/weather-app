@@ -1,10 +1,19 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 
 var ChooseCity = require('../components/ChooseCity');
 
 var ChooseCityContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      direction: 'column'
+    }
+  },
+  propTypes: {
+    direction: PropTypes.string
   },
   getInitialState: function() {
     return {
@@ -30,7 +39,8 @@ var ChooseCityContainer = React.createClass({
       <ChooseCity 
         onSubmitCity={this.handleSubmitCity}
         onUpdateCity={this.handleUpdateCity}
-        city={this.state.city} />
+        city={this.state.city}
+        direction={this.props.direction} />
     );
   }
 
